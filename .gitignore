@@ -1,0 +1,9 @@
+# Arquivos de sistema macOS
+.DS_Store
+
+# Logs
+*.log
+
+# Pastas temporárias
+node_modules/
+dist/
