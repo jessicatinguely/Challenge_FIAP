@@ -1,0 +1,17 @@
+:root{
+  --swift-red:#E84B2E; --swift-deep:#D14027; --swift-cream:#FAEFE4;
+  --swift-card:#F6E6D3; --swift-beige:#EEDAC4; --swift-brown:#6a4f3a;
+}
+.btn-primary{ --bs-btn-bg:var(--swift-red); --bs-btn-border-color:var(--swift-red); --bs-btn-hover-bg:#d94228; }
+.bg-deep{ background:var(--swift-deep)!important; }
+.bg-cream{ background:var(--swift-cream)!important; }
+.text-brown{ color:var(--swift-brown)!important; }
+.border-beige{ border:1px solid var(--swift-beige)!important; }
+.bg-badge{ background:#ffe6d8!important; }
+.nav-chip{ color:#fff; background:rgba(255,255,255,.14); padding:.5rem .75rem; border-radius:.75rem; display:inline-block; font-weight:700; }
+.nav-chip.active,.nav-chip:hover{ background:#fff; color:var(--swift-deep); }
+.brand-mark{ width:28px; height:28px; border-radius:50%; background:#fff; color:var(--swift-deep); display:grid; place-items:center; }
+.pill{ width:92px; height:92px; border-radius:50%; background:#f5dcc3; border:6px solid #efcfb3; }
+.card-tray{ background:var(--swift-card); border:2px solid var(--swift-beige); border-radius:14px; }
+.tray-thumb{ aspect-ratio: 11/8; object-fit: cover; border-radius:12px; border:6px solid #e7cdb1; background:#f3d9bf; }
+.fw-black{ font-weight:900; }
