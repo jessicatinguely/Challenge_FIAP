@@ -11,7 +11,10 @@
 .nav-chip{ color:#fff; background:rgba(255,255,255,.14); padding:.5rem .75rem; border-radius:.75rem; display:inline-block; font-weight:700; }
 .nav-chip.active,.nav-chip:hover{ background:#fff; color:var(--swift-deep); }
 .brand-mark{ width:28px; height:28px; border-radius:50%; background:#fff; color:var(--swift-deep); display:grid; place-items:center; }
-.pill{ width:92px; height:92px; border-radius:50%; background:#f5dcc3; border:6px solid #efcfb3; }
+.pill{ width:92px; height:92px; border-radius:50%; background:#f5dcc3; border:6px solid #efcfb3; display: grid ; place-items: center; }
 .card-tray{ background:var(--swift-card); border:2px solid var(--swift-beige); border-radius:14px; }
 .tray-thumb{ aspect-ratio: 11/8; object-fit: cover; border-radius:12px; border:6px solid #e7cdb1; background:#f3d9bf; }
 .fw-black{ font-weight:900; }
+.pill img,.pill svg{max-width:70%; height:auto; display:block;}
+.section-title {display: block; width: 100%;background-color: var(--swift-red); color: #fff; font-weight: 700; padding: 0.5rem 1rem; border-radius: 0.5rem; margin-bottom: 1rem;}
+.section-chip{display:inline-block;background:var(--swift-red); color:#fff;font-weight:700; padding:.5rem 1rem;border-radius:.75rem; margin:1rem 0 .5rem;}
