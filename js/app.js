@@ -113,3 +113,85 @@ window.clearCart = clearCart;
 // sanity check
 console.log('app.js carregado');
 
+/* ===== Página de Carrinho ===== */
+function renderCartPage() {
+  const table = document.querySelector('#cart-table tbody');
+  const empty = document.querySelector('[data-cart-empty]');
+  if (!table) return; // não está na carrinho.html
+
+  // monta linhas
+  table.innerHTML = '';
+  if (cart.length === 0) {
+    empty?.removeAttribute('hidden');
+  } else {
+    empty?.setAttribute('hidden','');
+    cart.forEach(item => {
+      const tr = document.createElement('tr');
+      tr.dataset.name = item.name;
+
+      tr.innerHTML = `
+        <td class="fw-semibold">${item.name}</td>
+        <td class="text-end d-none d-md-table-cell">${fmtBRL(item.price)}</td>
+        <td class="text-center">
+          <div class="btn-group" role="group" aria-label="Alterar quantidade">
+            <button class="btn btn-light" data-action="dec" title="Diminuir">−</button>
+            <input type="number" class="form-control text-center" style="width:64px" min="0" step="1" value="${item.qty}" data-qty>
+            <button class="btn btn-light" data-action="inc" title="Aumentar">+</button>
+          </div>
+        </td>
+        <td class="text-end fw-semibold" data-subtotal>${fmtBRL(item.qty * item.price)}</td>
+        <td class="text-center">
+          <button class="btn btn-outline-danger btn-sm" data-action="remove" title="Remover">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </td>
+      `;
+      table.appendChild(tr);
+    });
+  }
+  updateCartUI(); // atualiza contadores/total visíveis
+}
+
+document.addEventListener('DOMContentLoaded', renderCartPage);
+
+// Delegation: + / - / remover / limpar
+document.addEventListener('click', (e) => {
+  // limpar
+  if (e.target.closest('[data-clear]')) {
+    e.preventDefault();
+    if (confirm('Limpar carrinho?')) {
+      clearCart();
+      renderCartPage();
+    }
+    return;
+  }
+
+  const btn = e.target.closest('[data-action]');
+  if (!btn) return;
+
+  const action = btn.dataset.action;
+  const tr = btn.closest('tr[data-name]');
+  if (!tr) return;
+
+  const name = tr.dataset.name;
+  const item = cart.find(i => i.name === name);
+  if (!item) return;
+
+  if (action === 'inc') setQty(name, item.qty + 1);
+  if (action === 'dec') setQty(name, item.qty - 1);
+  if (action === 'remove') setQty(name, 0);
+
+  renderCartPage();
+});
+
+// Alterar quantidade digitando
+document.addEventListener('change', (e) => {
+  const input = e.target.closest('input[data-qty]');
+  if (!input) return;
+  const tr = input.closest('tr[data-name]');
+  if (!tr) return;
+  const name = tr.dataset.name;
+  const qty = Math.max(0, parseInt(input.value || '0', 10));
+  setQty(name, qty);
+  renderCartPage();
+});
