@@ -1,152 +1,324 @@
 <!DOCTYPE html>
 <html lang="pt-BR" data-bs-theme="light">
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Swift — Página Inicial</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="css/theme.css">
 </head>
 <body class="bg-cream">
-<header class="bg-deep text-white sticky-top shadow-sm">
-  <div class="container py-2">
+
+<header class="header bg-cream sticky-top">
+  <div class="container py-3">
     <div class="row g-3 align-items-center">
       <div class="col-12 col-lg-3 d-flex align-items-center gap-2">
-        <img src="images/logo.png" class="img-fluid" style="max-height: 40px;" alt="Logo">
+        <img src="images/logo_swift.png" class="img-fluid" style="max-height: 42px;" alt="Swift">
       </div>
+
       <div class="col-12 col-lg-6">
-        <form class="d-flex bg-white rounded-pill px-3" role="search" onsubmit="event.preventDefault()">
-          <input class="form-control border-0 bg-transparent py-2" type="search" placeholder="O que você quer cozinhar hoje?">
-          <button class="btn btn-link text-dark" type="submit"><i class="bi bi-search"></i></button>
+        <form class="search-bar d-flex align-items-center px-3" role="search" onsubmit="event.preventDefault()">
+          <input class="search-input form-control border-0 bg-transparent" type="search" placeholder="O que você quer cozinhar hoje?">
+          <button class="search-btn btn btn-link p-0 ms-2" type="submit" aria-label="Buscar"><i class="bi bi-search"></i></button>
         </form>
       </div>
+
       <div class="col-12 col-lg-3 text-lg-end d-grid d-lg-block gap-2">
         <button class="btn btn-primary me-2">Já tenho conta</button>
         <button class="btn btn-light">Criar nova conta</button>
-        <div><a class="link-light small" href="#">Esqueci a senha</a></div>
+        <div><a class="link-dark small" href="#">Esqueci a senha</a></div>
       </div>
     </div>
-    <nav class="d-flex align-items-center gap-2 mt-3">
+
+    <nav class="nav-chips d-flex align-items-center gap-2 mt-3">
       <a class="nav-chip active" href="#">Página Inicial</a>
       <a class="nav-chip" href="#">Categorias</a>
       <a class="nav-chip" href="#">Promoções</a>
       <a class="nav-chip" href="#">Lojas Físicas</a>
       <a class="nav-chip" href="#">Entre em Contato</a>
       <a class="nav-chip" href="#">Sobre Nós</a>
-      <div class="ms-auto">🛒 <span data-cart-count>0</span></div>
+      <div class="ms-auto small d-none d-lg-block">🛒 <span data-cart-count>0</span></div>
     </nav>
   </div>
 </header>
 
 <main class="container my-4">
-  <section class="position-relative">
-    <img class="w-100 rounded-4" src="images/banner.png" alt="Swift em Dobro">
+
+  <!-- Banner -->
+  <section class="banner position-relative">
+    <img class="w-100 rounded-4" src="images/propaganda.png" alt="Swift em Dobro">
     <button class="btn btn-primary position-absolute bottom-0 end-0 m-3 fw-bold rounded-3">COMPRE AGORA</button>
-    <!-- -->
   </section>
 
- <section class="row row-cols-2 row-cols-md-5 g-4 mt-4 text-center">
-  <div class="col">
-    <div class="pill mx-auto">
-      <img src="images/alexa.svg" alt="Comando via Alexa">
+  <!-- Ícones / selos -->
+  <section class="row row-cols-2 row-cols-md-5 g-4 mt-4 text-center selos">
+    <div class="col">
+      <div class="pill mx-auto"><img src="images/alexa.png" alt="Comando via Alexa"></div>
+      <div class="mt-2 small text-brown fw-semibold">COMANDO VIA ALEXA</div>
     </div>
-    <div class="mt-2 small text-brown fw-semibold">COMANDO VIA ALEXA</div>
-  </div>
-
-  <div class="col">
-    <div class="pill mx-auto">
-      <img src="images/ar.svg" alt="Compatível com óculos AR">
+    <div class="col">
+      <div class="pill mx-auto"><img src="images/visionpro.png" alt="Compatível com óculos AR"></div>
+      <div class="mt-2 small text-brown fw-semibold">COMPATÍVEL COM ÓCULOS AR</div>
     </div>
-    <div class="mt-2 small text-brown fw-semibold">COMPATÍVEL COM ÓCULOS AR</div>
-  </div>
-
-  <div class="col">
-    <div class="pill mx-auto">
-      <img src="images/entrega.svg" alt="Entrega em 1 dia">
+    <div class="col">
+      <div class="pill mx-auto"><img src="images/transporte.png" alt="Entrega em 1 dia"></div>
+      <div class="mt-2 small text-brown fw-semibold">ENTREGA EM 1 DIA</div>
     </div>
-    <div class="mt-2 small text-brown fw-semibold">ENTREGA EM 1 DIA</div>
-  </div>
-
-  <div class="col">
-    <div class="pill mx-auto">
-      <img src="images/locker.svg" alt="Compre e retire na loja">
+    <div class="col">
+      <div class="pill mx-auto"><img src="images/armarios.png" alt="Compre e retire na loja"></div>
+      <div class="mt-2 small text-brown fw-semibold">COMPRE E RETIRE NA LOJA</div>
     </div>
-    <div class="mt-2 small text-brown fw-semibold">COMPRE E RETIRE NA LOJA</div>
-  </div>
-
-  <div class="col">
-    <div class="pill mx-auto">
-      <img src="images/faleconosco.svg" alt="Fale Conosco">
+    <div class="col">
+      <div class="pill mx-auto"><img src="images/wpp.png" alt="Fale Conosco"></div>
+      <div class="mt-2 small text-brown fw-semibold">FALE CONOSCO</div>
     </div>
-    <div class="mt-2 small text-brown fw-semibold">FALE CONOSCO</div>
-  </div>
-</section>
+  </section>
 
-
-  <section class="mt-4">
-    <h5 class="section-title">Ofertas do dia</h5>
+  <!-- Ofertas -->
+  <section class="mt-4 ofertas">
+    <h5 class="section-bar">Ofertas do dia</h5>
     <div class="row row-cols-2 row-cols-md-5 g-3 mt-2">
-      <article class="col"><div class="card h-100 card-tray"><img class="card-img-top tray-thumb" src="images/massa.png"><div class="card-body d-flex flex-column"><h6 class="fw-bold text-uppercase text-brown mb-1 small">MASSA FETUCCINE COM MOLHO BRANCO E BRÓCOLIS</h6><div class="text-secondary small mb-2">SWIFT PRONTOS PARA COMER</div><div class="fw-black mb-2">R$ 19,90</div><button class="btn btn-primary mt-auto" onclick="addToCart('Massa Fetuccine',19.9)">ADICIONAR</button></div></div></article>
-      <article class="col"><div class="card h-100 card-tray"><img class="card-img-top tray-thumb" src="images/espaguete.jpg"><div class="card-body d-flex flex-column"><h6 class="fw-bold text-uppercase text-brown mb-1 small">MASSA ESPAGUETE COM MOLHO DE TOMATE</h6><div class="text-secondary small mb-2">SWIFT PRONTOS PARA COMER</div><div class="fw-black mb-2">R$ 16,90</div><button class="btn btn-primary mt-auto" onclick="addToCart('Espaguete',16.9)">ADICIONAR</button></div></div></article>
-      <article class="col"><div class="card h-100 card-tray"><img class="card-img-top tray-thumb" src="images/contrafile.png"><div class="card-body d-flex flex-column"><h6 class="fw-bold text-uppercase text-brown mb-1 small">BIFE DE CONTRA FILÉ FATIADO</h6><div class="text-secondary small mb-2">PREÇO AO KG</div><div class="fw-black mb-2">R$ 35,90</div><button class="btn btn-primary mt-auto" onclick="addToCart('Contra Filé',35.9)">ADICIONAR</button></div></div></article>
-      <article class="col"><div class="card h-100 card-tray"><img class="card-img-top tray-thumb" src="images/sobrecoxacombacon.png"><div class="card-body d-flex flex-column"><h6 class="fw-bold text-uppercase text-brown mb-1 small">SOBRECOXA DE FRANGO RECHEADA COM BACON</h6><div class="text-secondary small mb-2">PREÇO AO KG</div><div class="fw-black mb-2">R$ 21,90</div><button class="btn btn-primary mt-auto" onclick="addToCart('Sobrecoxa',21.9)">ADICIONAR</button></div></div></article>
-      <article class="col"><div class="card h-100 card-tray"><img class="card-img-top tray-thumb" src="images/bisteca.png"><div class="card-body d-flex flex-column"><h6 class="fw-bold text-uppercase text-brown mb-1 small">BISTECA FATIADA</h6><div class="text-secondary small mb-2">PREÇO AO KG</div><div class="fw-black mb-2">R$ 24,90</div><button class="btn btn-primary mt-auto" onclick="addToCart('Bisteca',24.9)">ADICIONAR</button></div></div></article>
+      <article class="col massa">
+        <div class="card h-100 card-tray">
+          <img class="card-img-top tray-thumb" src="images/fettutine.png" alt="Massa Fettuccine">
+          <div class="card-body d-flex flex-column">
+            <h6 class="fw-bold text-uppercase text-brown small mb-1">MASSA FETTUCCINE</h6>
+            <div class="fw-black mb-2">R$ 19,90</div>
+            <button class="btn btn-primary mt-auto" data-add="Massa Fettuccine" data-price="19.9">ADICIONAR</button>
+          </div>
+        </div>
+      </article>
+      <article class="col espaguete">
+        <div class="card h-100 card-tray">
+          <img class="card-img-top tray-thumb" src="images/massa.png" alt="Espaguete">
+          <div class="card-body d-flex flex-column">
+            <h6 class="fw-bold text-uppercase text-brown small mb-1">ESPAGUETE</h6>
+            <div class="fw-black mb-2">R$ 16,90</div>
+            <button class="btn btn-primary mt-auto" data-add="Espaguete" data-price="16.9">ADICIONAR</button>
+          </div>
+        </div>
+      </article>
+      <article class="col bife">
+        <div class="card h-100 card-tray">
+          <img class="card-img-top tray-thumb" src="images/bife_gado.png" alt="Bife">
+          <div class="card-body d-flex flex-column">
+            <h6 class="fw-bold text-uppercase text-brown small mb-1">BIFE DE CONTRA FILÉ</h6>
+            <div class="fw-black mb-2">R$ 35,90</div>
+            <button class="btn btn-primary mt-auto" data-add="Bife" data-price="35.9">ADICIONAR</button>
+          </div>
+        </div>
+      </article>
+      <article class="col sobrecoxa">
+        <div class="card h-100 card-tray">
+          <img class="card-img-top tray-thumb" src="images/sobrecoxa.png" alt="Sobrecoxa">
+          <div class="card-body d-flex flex-column">
+            <h6 class="fw-bold text-uppercase text-brown small mb-1">SOBRECOXA COM BACON</h6>
+            <div class="fw-black mb-2">R$ 21,90</div>
+            <button class="btn btn-primary mt-auto" data-add="Sobrecoxa" data-price="21.9">ADICIONAR</button>
+          </div>
+        </div>
+      </article>
+      <article class="col bisteca">
+        <div class="card h-100 card-tray">
+          <img class="card-img-top tray-thumb" src="images/bisteca_porco.png" alt="Bisteca">
+          <div class="card-body d-flex flex-column">
+            <h6 class="fw-bold text-uppercase text-brown small mb-1">BISTECA</h6>
+            <div class="fw-black mb-2">R$ 24,90</div>
+            <button class="btn btn-primary mt-auto" data-add="Bisteca" data-price="24.9">ADICIONAR</button>
+          </div>
+        </div>
+      </article>
     </div>
   </section>
 
-  <section class="row g-4 mt-3">
-    <div class="col-12 col-lg-6">
-      <h5 class="section-chip">Monte seu cardápio</h5>
-      <div class="row row-cols-2 row-cols-md-3 g-3 mt-1">
-        <div class="col"><div class="card h-100 card-tray"><img class="card-img-top tray-thumb" src="images/monte.jpg"><div class="card-body"><h6 class="fw-bold text-uppercase text-brown small">AQUI VOCÊ PODE MONTAR SEU CARDÁPIO</h6><a class="btn btn-dark w-100">COMEÇAR</a></div></div></div>
-        <div class="col"><div class="card h-100 card-tray"><img class="card-img-top tray-thumb" src="images/pack-cerveja.jpg"><div class="card-body d-flex flex-column"><h6 class="fw-bold text-uppercase text-brown small">PACK COM 6 LONG NECK DE CERVEJA</h6><div class="fw-black mb-2">R$ 38,99</div><button class="btn btn-primary mt-auto" onclick="addToCart('Cerveja',38.99)">ADICIONAR</button></div></div></div>
-        <div class="col"><div class="card h-100 card-tray"><img class="card-img-top tray-thumb" src="images/carvao.jpg"><div class="card-body d-flex flex-column"><h6 class="fw-bold text-uppercase text-brown small">CARVÃO PARA CHURRASCO - 5KG</h6><div class="fw-black mb-2">R$ 19,50</div><button class="btn btn-primary mt-auto" onclick="addToCart('Carvão',19.5)">ADICIONAR</button></div></div></div>
-        <div class="col"><div class="card h-100 card-tray"><img class="card-img-top tray-thumb" src="images/grelha.jpg"><div class="card-body d-flex flex-column"><h6 class="fw-bold text-uppercase text-brown small">GRELHA PARA CHURRASQUEIRA 50X50 CM</h6><div class="fw-black mb-2">R$ 64,99</div><button class="btn btn-primary mt-auto" onclick="addToCart('Grelha',64.99)">ADICIONAR</button></div></div></div>
-        <div class="col"><div class="card h-100 card-tray"><img class="card-img-top tray-thumb" src="images/talheres.jpg"><div class="card-body d-flex flex-column"><h6 class="fw-bold text-uppercase text-brown small">KIT TALHERES PARA CHURRASCO</h6><div class="fw-black mb-2">R$ 30,00</div><button class="btn btn-primary mt-auto" onclick="addToCart('Talheres',30)">ADICIONAR</button></div></div></div>
-      </div>
-    </div>
-    <div class="col-12 col-lg-6">
-      <h5 class="section-title">Kit Churrasco</h5>
-      <div class="row row-cols-2 row-cols-md-3 g-3 mt-1">
-        <div class="col"><div class="card h-100 card-tray"><img class="card-img-top tray-thumb" src="images/tabua.jpg"><div class="card-body d-flex flex-column"><h6 class="fw-bold text-uppercase text-brown small">TÁBUA DE MADEIRA PARA CHURRASCO</h6><div class="fw-black mb-2">R$ 28,99</div><button class="btn btn-primary mt-auto" onclick="addToCart('Tábua',28.99)">ADICIONAR</button></div></div></div>
-        <div class="col"><div class="card h-100 card-tray"><img class="card-img-top tray-thumb" src="images/pao.jpg"><div class="card-body d-flex flex-column"><h6 class="fw-bold text-uppercase text-brown small">PACOTE DE PÃO DE ALHO - 150GR</h6><div class="fw-black mb-2">R$ 12,50</div><button class="btn btn-primary mt-auto" onclick="addToCart('Pão de Alho',12.5)">ADICIONAR</button></div></div></div>
-        <div class="col"><div class="card h-100 card-tray"><img class="card-img-top tray-thumb" src="images/espetinho.jpg"><div class="card-body d-flex flex-column"><h6 class="fw-bold text-uppercase text-brown small">PACOTE COM 5 ESPETINHOS BOVINO</h6><div class="fw-black mb-2">R$ 15,00</div><button class="btn btn-primary mt-auto" onclick="addToCart('Espetinho',15)">ADICIONAR</button></div></div></div>
-        <div class="col"><div class="card h-100 card-tray"><img class="card-img-top tray-thumb" src="images/linguica.jpg"><div class="card-body d-flex flex-column"><h6 class="fw-bold text-uppercase text-brown small">PACOTE COM 300GR DE LINGUIÇA SUÍNA</h6><div class="fw-black mb-2">R$ 18,99</div><button class="btn btn-primary mt-auto" onclick="addToCart('Linguiça',18.99)">ADICIONAR</button></div></div></div>
-      </div>
-    </div>
-  </section>
-
+  <!-- Monte seu cardápio / Kit -->
   <section class="mt-4">
-    <h5 class="badge bg-deep rounded-3 fw-bold px-3 py-2">Cozinhe com AR</h5>
-    <div class="row row-cols-2 row-cols-md-5 g-3 mt-1">
-      <div class="col"><div class="card h-100 card-tray"><img class="card-img-top tray-thumb" src="images/cozinhe-ar.jpg"><div class="card-body d-flex flex-column"><h6 class="fw-bold text-uppercase text-brown small">JÁ PENSOU EM COZINHAR COM AR?</h6><a class="btn btn-dark mt-auto">COMEÇAR</a></div></div></div>
-      <div class="col"><div class="card h-100 card-tray"><img class="card-img-top tray-thumb" src="images/tabua.jpg"><div class="card-body d-flex flex-column"><h6 class="fw-bold text-uppercase text-brown small">TÁBUA DE MADEIRA</h6><div class="fw-black mb-2">R$ 28,99</div><button class="btn btn-primary mt-auto" onclick="addToCart('Tábua',28.99)">ADICIONAR</button></div></div></div>
-      <div class="col"><div class="card h-100 card-tray"><img class="card-img-top tray-thumb" src="images/pao.jpg"><div class="card-body d-flex flex-column"><h6 class="fw-bold text-uppercase text-brown small">PÃO DE ALHO 150G</h6><div class="fw-black mb-2">R$ 12,50</div><button class="btn btn-primary mt-auto" onclick="addToCart('Pão de Alho',12.5)">ADICIONAR</button></div></div></div>
-      <div class="col"><div class="card h-100 card-tray"><img class="card-img-top tray-thumb" src="images/espetinho.jpg"><div class="card-body d-flex flex-column"><h6 class="fw-bold text-uppercase text-brown small">ESPETINHOS</h6><div class="fw-black mb-2">R$ 15,00</div><button class="btn btn-primary mt-auto" onclick="addToCart('Espetinho',15)">ADICIONAR</button></div></div></div>
-      <div class="col"><div class="card h-100 card-tray"><img class="card-img-top tray-thumb" src="images/linguica.jpg"><div class="card-body d-flex flex-column"><h6 class="fw-bold text-uppercase text-brown small">LINGUIÇA SUÍNA 300G</h6><div class="fw-black mb-2">R$ 18,99</div><button class="btn btn-primary mt-auto" onclick="addToCart('Linguiça',18.99)">ADICIONAR</button></div></div></div>
+    <div class="row g-4">
+      <div class="col-12 col-lg-6">
+        <h5 class="section-bar">Monte seu cardápio</h5>
+        <div class="row row-cols-2 row-cols-md-3 g-3 mt-1">
+          <div class="col entrar-montagem">
+            <div class="card h-100 card-tray">
+              <img class="card-img-top tray-thumb" src="images/monte_seu_cardapio.png" alt="Monte seu cardápio">
+              <div class="card-body d-flex flex-column">
+                <h6 class="fw-bold text-uppercase text-brown small">AQUI VOCÊ PODE MONTAR SEU CARDÁPIO</h6>
+                <a class="btn btn-dark mt-auto">COMEÇAR</a>
+              </div>
+            </div>
+          </div>
+          <div class="col cerveja">
+            <div class="card h-100 card-tray">
+              <img class="card-img-top tray-thumb" src="images/cerveja.png" alt="Cerveja">
+              <div class="card-body d-flex flex-column">
+                <h6 class="fw-bold text-uppercase text-brown small">PACK 6 LONG NECK</h6>
+                <div class="fw-black mb-2">R$ 38,99</div>
+                <button class="btn btn-primary mt-auto" data-add="Cerveja" data-price="38.99">ADICIONAR</button>
+              </div>
+            </div>
+          </div>
+          <div class="col carvao">
+            <div class="card h-100 card-tray">
+              <img class="card-img-top tray-thumb" src="images/carvao.png" alt="Carvão">
+              <div class="card-body d-flex flex-column">
+                <h6 class="fw-bold text-uppercase text-brown small">CARVÃO 5KG</h6>
+                <div class="fw-black mb-2">R$ 19,50</div>
+                <button class="btn btn-primary mt-auto" data-add="Carvão" data-price="19.5">ADICIONAR</button>
+              </div>
+            </div>
+          </div>
+          <div class="col grelha">
+            <div class="card h-100 card-tray">
+              <img class="card-img-top tray-thumb" src="images/grelha.png" alt="Grelha 50x50">
+              <div class="card-body d-flex flex-column">
+                <h6 class="fw-bold text-uppercase text-brown small">GRELHA 50x50</h6>
+                <div class="fw-black mb-2">R$ 64,99</div>
+                <button class="btn btn-primary mt-auto" data-add="Grelha" data-price="64.99">ADICIONAR</button>
+              </div>
+            </div>
+          </div>
+          <div class="col talheres">
+            <div class="card h-100 card-tray">
+              <img class="card-img-top tray-thumb" src="images/talheres.png" alt="Talheres">
+              <div class="card-body d-flex flex-column">
+                <h6 class="fw-bold text-uppercase text-brown small">KIT TALHERES</h6>
+                <div class="fw-black mb-2">R$ 30,00</div>
+                <button class="btn btn-primary mt-auto" data-add="Talheres" data-price="30">ADICIONAR</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-6">
+        <h5 class="section-bar beige">Kit Churrasco</h5>
+        <div class="row row-cols-2 row-cols-md-3 g-3 mt-1">
+          <div class="col tabua">
+            <div class="card h-100 card-tray">
+              <img class="card-img-top tray-thumb" src="images/tabua.png" alt="Tábua de madeira">
+              <div class="card-body d-flex flex-column">
+                <h6 class="fw-bold text-uppercase text-brown small">TÁBUA DE MADEIRA</h6>
+                <div class="fw-black mb-2">R$ 28,99</div>
+                <button class="btn btn-primary mt-auto" data-add="Tábua" data-price="28.99">ADICIONAR</button>
+              </div>
+            </div>
+          </div>
+          <div class="col pao">
+            <div class="card h-100 card-tray">
+              <img class="card-img-top tray-thumb" src="images/pao_de_alho.png" alt="Pão de Alho 150g">
+              <div class="card-body d-flex flex-column">
+                <h6 class="fw-bold text-uppercase text-brown small">PÃO DE ALHO 150G</h6>
+                <div class="fw-black mb-2">R$ 12,50</div>
+                <button class="btn btn-primary mt-auto" data-add="Pão de Alho" data-price="12.5">ADICIONAR</button>
+              </div>
+            </div>
+          </div>
+          <div class="col espetinho">
+            <div class="card h-100 card-tray">
+              <img class="card-img-top tray-thumb" src="images/espetinho.png" alt="Espetinho">
+              <div class="card-body d-flex flex-column">
+                <h6 class="fw-bold text-uppercase text-brown small">ESPETINHOS</h6>
+                <div class="fw-black mb-2">R$ 15,00</div>
+                <button class="btn btn-primary mt-auto" data-add="Espetinho" data-price="15">ADICIONAR</button>
+              </div>
+            </div>
+          </div>
+          <div class="col linguica">
+            <div class="card h-100 card-tray">
+              <img class="card-img-top tray-thumb" src="images/linguica.png" alt="Linguiça suína 300g">
+              <div class="card-body d-flex flex-column">
+                <h6 class="fw-bold text-uppercase text-brown small">LINGUIÇA SUÍNA 300G</h6>
+                <div class="fw-black mb-2">R$ 18,99</div>
+                <button class="btn btn-primary mt-auto" data-add="Linguiça" data-price="18.99">ADICIONAR</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <section class="row g-3 my-4">
-    <div class="col-12 col-md-3"><div class="p-3 bg-white border-beige rounded-3 h-100"><h6 class="fw-bold">CANAIS DE VENDAS</h6><div class="small">COMPRE PELO TELEVENDAS (11) 4020-8588<br>COMPRE PELO WHATSAPP</div></div></div>
-    <div class="col-12 col-md-3"><div class="p-3 bg-white border-beige rounded-3 h-100"><h6 class="fw-bold">SWIFT RESOLVE</h6><div class="small">RESOLVA PELO CHAT OU TELEFONE 0800 400 2892</div></div></div>
-    <div class="col-12 col-md-3"><div class="p-3 bg-white border-beige rounded-3 h-100"><h6 class="fw-bold">PARA VOCÊ</h6><div class="small">Receitas Swift, Trabalhe Conosco, Dúvidas Frequentes</div></div></div>
-    <div class="col-12 col-md-3"><div class="p-3 bg-white border-beige rounded-3 h-100"><h6 class="fw-bold">SOBRE NÓS</h6><div class="small">Nossa história, Lojas, Sustentabilidade</div></div></div>
-  </section>
-
-  <section class="d-flex align-items-center gap-3 p-3 bg-white border-beige rounded-3">
-    <span class="badge text-brown bg-badge fw-bold">Formas de pagamento</span>
-    <div class="d-flex gap-2 flex-wrap"><span class="badge bg-dark">Pix</span><span class="badge bg-dark">Visa</span><span class="badge bg-dark">Master</span><span class="badge bg-dark">Elo</span></div>
-    <div class="ms-auto small">Total: <strong data-cart-total>R$ 0,00</strong></div>
-  </section>
 </main>
 
-<footer class="py-3 bg-deep text-white">
-  <div class="container d-flex flex-wrap gap-3 justify-content-between align-items-center">
-    <div class="small">Acesse nossas redes: @lojaswift • /lojaswift • /lojaswiftofficial</div>
-    <div class="small">Total: <strong data-cart-total>R$ 0,00</strong></div>
+<footer class="py-4 text-center">
+  <div class="small">Total: <strong data-cart-total>R$ 0,00</strong></div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>
+<footer class="swift-footer py-4">
+  <div class="container">
+    <!-- 4 cards -->
+    <div class="row g-4">
+      <div class="col-12 col-md-3">
+        <div class="foot-card">
+          <div class="foot-pill"><i class="bi bi-headset"></i><span>CANAIS DE VENDAS</span></div>
+          <div class="foot-text">
+            <div>COMPRE PELO TELEVENDAS</div>
+            <div class="foot-strong">(11) 4020-8588</div>
+            <div class="mt-2">COMPRE PELO WHATSAPP</div>
+            <div class="foot-strong">(11) 4020-8588</div>
+            <div class="foot-small mt-2">SEGUNDA A SEXTA - 7H ÀS 19H<br>SÁBADOS - 7H ÀS 18H<br>FERIADOS - 9H ÀS 15H</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-3">
+        <div class="foot-card">
+          <div class="foot-pill"><i class="bi bi-chat-dots"></i><span>SWIFT RESOLVE</span></div>
+          <div class="foot-text">
+            <div>RESOLVA PELO CHAT</div>
+            <div class="foot-link">CLIQUE AQUI</div>
+            <div class="mt-2">RESOLVA PELO TELEFONE</div>
+            <div class="foot-strong">0800 400 2892</div>
+            <div class="foot-small mt-2">SEGUNDA A SEXTA - 9H ÀS 18H<br>SÁBADOS - 9H ÀS 15H<br>FERIADOS - 9H ÀS 15H</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-3">
+        <div class="foot-card">
+          <div class="foot-pill"><i class="bi bi-hand-index-thumb"></i><span>PARA VOCÊ!!!</span></div>
+          <ul class="foot-list">
+            <li>RECEITAS SWIFT</li><li>CHURRASCO SWIFT</li><li>COZINHE COM AR</li><li>TRABALHE CONOSCO</li><li>POLÍTICA DE PRIVACIDADE</li><li>DÚVIDAS FREQUENTES</li><li>FAQ</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-3">
+        <div class="foot-card">
+          <div class="foot-pill"><i class="bi bi-info-circle"></i><span>SOBRE NÓS</span></div>
+          <ul class="foot-list">
+            <li>A NOSSA HISTÓRIA</li><li>ENCONTRE NOSSAS LOJAS</li><li>SUSTENTABILIDADE</li><li>APP SWIFT</li><li>REGULAMENTOS</li><li>E-MAIL</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+<!-- formas de pagamento -->
+<div class="d-flex align-items-center gap-3 mt-4 flex-wrap">
+  <div class="d-flex gap-4 flex-wrap align-items-center">
+    <img src="images/master.png" alt="Mastercard" class="pay-logo">
+    <img src="images/visa.png" alt="Visa" class="pay-logo">
+    <img src="images/picpay.png" alt="PicPay" class="pay-logo">
+    <img src="images/pix.png" alt="Pix" class="pay-logo">
+    <img src="images/elo.png" alt="Elo" class="pay-logo">
+    <img src="images/amex.png" alt="Amex" class="pay-logo">
+  </div>
+</div>
+
+  <!-- faixa final -->
+  <div class="foot-bar mt-4">
+    <div class="container d-flex flex-wrap gap-3 justify-content-between align-items-center">
+      <div class="foot-bar-text"><strong>Acesse nossas redes</strong></div>
+      <div class="d-flex align-items-center gap-4">
+        <span class="d-flex align-items-center gap-2"><i class="bi bi-instagram"></i>@lojaswift</span>
+        <span class="d-flex align-items-center gap-2"><i class="bi bi-facebook"></i>/lojaswift</span>
+        <span class="d-flex align-items-center gap-2"><i class="bi bi-youtube"></i>lojaswiftofficial</span>
+      </div>
+    </div>
   </div>
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/app.js"></script>
-</body></html>
