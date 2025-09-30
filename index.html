@@ -132,112 +132,133 @@
     </div>
   </section>
 
-  <!-- Monte seu cardápio / Kit -->
-  <section class="mt-4">
-    <div class="row g-4">
-      <div class="col-12 col-lg-6">
-        <h5 class="section-bar">Monte seu cardápio</h5>
-        <div class="row row-cols-2 row-cols-md-3 g-3 mt-1">
-          <div class="col entrar-montagem">
-            <div class="card h-100 card-tray">
-              <img class="card-img-top tray-thumb" src="images/monte_seu_cardapio.png" alt="Monte seu cardápio">
-              <div class="card-body d-flex flex-column">
-                <h6 class="fw-bold text-uppercase text-brown small">AQUI VOCÊ PODE MONTAR SEU CARDÁPIO</h6>
-                <a class="btn btn-dark mt-auto">COMEÇAR</a>
-              </div>
-            </div>
-          </div>
-          <div class="col cerveja">
-            <div class="card h-100 card-tray">
-              <img class="card-img-top tray-thumb" src="images/cerveja.png" alt="Cerveja">
-              <div class="card-body d-flex flex-column">
-                <h6 class="fw-bold text-uppercase text-brown small">PACK 6 LONG NECK</h6>
-                <div class="fw-black mb-2">R$ 38,99</div>
-                <button class="btn btn-primary mt-auto" data-add="Cerveja" data-price="38.99">ADICIONAR</button>
-              </div>
-            </div>
-          </div>
-          <div class="col carvao">
-            <div class="card h-100 card-tray">
-              <img class="card-img-top tray-thumb" src="images/carvao.png" alt="Carvão">
-              <div class="card-body d-flex flex-column">
-                <h6 class="fw-bold text-uppercase text-brown small">CARVÃO 5KG</h6>
-                <div class="fw-black mb-2">R$ 19,50</div>
-                <button class="btn btn-primary mt-auto" data-add="Carvão" data-price="19.5">ADICIONAR</button>
-              </div>
-            </div>
-          </div>
-          <div class="col grelha">
-            <div class="card h-100 card-tray">
-              <img class="card-img-top tray-thumb" src="images/grelha.png" alt="Grelha 50x50">
-              <div class="card-body d-flex flex-column">
-                <h6 class="fw-bold text-uppercase text-brown small">GRELHA 50x50</h6>
-                <div class="fw-black mb-2">R$ 64,99</div>
-                <button class="btn btn-primary mt-auto" data-add="Grelha" data-price="64.99">ADICIONAR</button>
-              </div>
-            </div>
-          </div>
-          <div class="col talheres">
-            <div class="card h-100 card-tray">
-              <img class="card-img-top tray-thumb" src="images/talheres.png" alt="Talheres">
-              <div class="card-body d-flex flex-column">
-                <h6 class="fw-bold text-uppercase text-brown small">KIT TALHERES</h6>
-                <div class="fw-black mb-2">R$ 30,00</div>
-                <button class="btn btn-primary mt-auto" data-add="Talheres" data-price="30">ADICIONAR</button>
-              </div>
-            </div>
-          </div>
+<!-- Cardápio + AR à ESQUERDA | Kit à DIREITA -->
+<section class="mt-4">
+  <div class="row align-items-start g-4">
+
+    <!-- ESQUERDA: Monte seu cardápio + Cozinhe com AR -->
+    <div class="col-12 col-lg-4">
+      <!-- Monte seu cardápio -->
+      <h5 class="section-bar">Monte seu cardápio</h5>
+      <div class="card h-100 card-tray mb-4">
+        <img class="card-img-top tray-thumb" src="images/monte_seu_cardapio.png" alt="Monte seu cardápio">
+        <div class="card-body d-flex flex-column">
+          <h6 class="fw-bold text-uppercase text-brown small">AQUI VOCÊ PODE MONTAR SEU CARDÁPIO</h6>
+          <a class="btn btn-primary mt-auto">COMEÇAR</a>
         </div>
       </div>
 
-      <div class="col-12 col-lg-6">
-        <h5 class="section-bar beige">Kit Churrasco</h5>
-        <div class="row row-cols-2 row-cols-md-3 g-3 mt-1">
-          <div class="col tabua">
-            <div class="card h-100 card-tray">
-              <img class="card-img-top tray-thumb" src="images/tabua.png" alt="Tábua de madeira">
-              <div class="card-body d-flex flex-column">
-                <h6 class="fw-bold text-uppercase text-brown small">TÁBUA DE MADEIRA</h6>
-                <div class="fw-black mb-2">R$ 28,99</div>
-                <button class="btn btn-primary mt-auto" data-add="Tábua" data-price="28.99">ADICIONAR</button>
-              </div>
-            </div>
-          </div>
-          <div class="col pao">
-            <div class="card h-100 card-tray">
-              <img class="card-img-top tray-thumb" src="images/pao_de_alho.png" alt="Pão de Alho 150g">
-              <div class="card-body d-flex flex-column">
-                <h6 class="fw-bold text-uppercase text-brown small">PÃO DE ALHO 150G</h6>
-                <div class="fw-black mb-2">R$ 12,50</div>
-                <button class="btn btn-primary mt-auto" data-add="Pão de Alho" data-price="12.5">ADICIONAR</button>
-              </div>
-            </div>
-          </div>
-          <div class="col espetinho">
-            <div class="card h-100 card-tray">
-              <img class="card-img-top tray-thumb" src="images/espetinho.png" alt="Espetinho">
-              <div class="card-body d-flex flex-column">
-                <h6 class="fw-bold text-uppercase text-brown small">ESPETINHOS</h6>
-                <div class="fw-black mb-2">R$ 15,00</div>
-                <button class="btn btn-primary mt-auto" data-add="Espetinho" data-price="15">ADICIONAR</button>
-              </div>
-            </div>
-          </div>
-          <div class="col linguica">
-            <div class="card h-100 card-tray">
-              <img class="card-img-top tray-thumb" src="images/linguica.png" alt="Linguiça suína 300g">
-              <div class="card-body d-flex flex-column">
-                <h6 class="fw-bold text-uppercase text-brown small">LINGUIÇA SUÍNA 300G</h6>
-                <div class="fw-black mb-2">R$ 18,99</div>
-                <button class="btn btn-primary mt-auto" data-add="Linguiça" data-price="18.99">ADICIONAR</button>
-              </div>
-            </div>
-          </div>
+      <!-- Cozinhe com AR -->
+      <h5 class="section-bar">Cozinhe com VR</h5>
+      <div class="card h-100 card-tray">
+        <img class="card-img-top tray-thumb" src="images/cozinhe_com_vr.png" alt="Cozinhe com VR">
+        <div class="card-body d-flex flex-column">
+          <h6 class="fw-bold text-uppercase text-brown small">JÁ PENSOU EM COZINHAR COM UM CHEFE AO SEU LADO?</h6>
+          <a class="btn btn-primary mt-auto">COMEÇAR</a>
         </div>
       </div>
-
     </div>
-  </section>
+
+    <!-- DIREITA: Kit Churrasco ocupando toda a coluna -->
+    <div class="col-12 col-lg-8">
+      <h5 class="section-bar">Kit Churrasco</h5>
+
+      <!-- Grid do kit -->
+      <div class="row row-cols-2 row-cols-md-3 row-cols-xl-4 g-3 mt-1">
+
+        <div class="col">
+          <div class="card h-100 card-tray">
+            <img class="card-img-top tray-thumb" src="images/cerveja.png" alt="Cerveja">
+            <div class="card-body d-flex flex-column">
+              <h6 class="fw-bold text-uppercase text-brown small">PACK 6 LONG NECK</h6>
+              <div class="fw-black mb-2">R$ 38,99</div>
+              <button class="btn btn-primary mt-auto">ADICIONAR</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 card-tray">
+            <img class="card-img-top tray-thumb" src="images/carvao.png" alt="Carvão">
+            <div class="card-body d-flex flex-column">
+              <h6 class="fw-bold text-uppercase text-brown small">CARVÃO 5KG</h6>
+              <div class="fw-black mb-2">R$ 19,50</div>
+              <button class="btn btn-primary mt-auto">ADICIONAR</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 card-tray">
+            <img class="card-img-top tray-thumb" src="images/grelha.png" alt="Grelha 50x50">
+            <div class="card-body d-flex flex-column">
+              <h6 class="fw-bold text-uppercase text-brown small">GRELHA 50x50</h6>
+              <div class="fw-black mb-2">R$ 64,99</div>
+              <button class="btn btn-primary mt-auto">ADICIONAR</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 card-tray">
+            <img class="card-img-top tray-thumb" src="images/talheres.png" alt="Talheres">
+            <div class="card-body d-flex flex-column">
+              <h6 class="fw-bold text-uppercase text-brown small">KIT TALHERES</h6>
+              <div class="fw-black mb-2">R$ 30,00</div>
+              <button class="btn btn-primary mt-auto">ADICIONAR</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 card-tray">
+            <img class="card-img-top tray-thumb" src="images/tabua.png" alt="Tábua">
+            <div class="card-body d-flex flex-column">
+              <h6 class="fw-bold text-uppercase text-brown small">TÁBUA DE MADEIRA</h6>
+              <div class="fw-black mb-2">R$ 28,99</div>
+              <button class="btn btn-primary mt-auto">ADICIONAR</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 card-tray">
+            <img class="card-img-top tray-thumb" src="images/pao_de_alho.png" alt="Pão de Alho">
+            <div class="card-body d-flex flex-column">
+              <h6 class="fw-bold text-uppercase text-brown small">PÃO DE ALHO 150G</h6>
+              <div class="fw-black mb-2">R$ 12,50</div>
+              <button class="btn btn-primary mt-auto">ADICIONAR</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 card-tray">
+            <img class="card-img-top tray-thumb" src="images/espetinho.png" alt="Espetinho">
+            <div class="card-body d-flex flex-column">
+              <h6 class="fw-bold text-uppercase text-brown small">ESPETINHOS</h6>
+              <div class="fw-black mb-2">R$ 15,00</div>
+              <button class="btn btn-primary mt-auto">ADICIONAR</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 card-tray">
+            <img class="card-img-top tray-thumb" src="images/linguica.png" alt="Linguiça">
+            <div class="card-body d-flex flex-column">
+              <h6 class="fw-bold text-uppercase text-brown small">LINGUIÇA SUÍNA 300G</h6>
+              <div class="fw-black mb-2">R$ 18,99</div>
+              <button class="btn btn-primary mt-auto">ADICIONAR</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
 
 </main>
 
@@ -263,7 +284,7 @@
             <div class="foot-strong">(11) 4020-8588</div>
             <div class="foot-small mt-2">SEGUNDA A SEXTA - 7H ÀS 19H<br>SÁBADOS - 7H ÀS 18H<br>FERIADOS - 9H ÀS 15H</div>
           </div>
-        </div>
+        </div>      
       </div>
 
       <div class="col-12 col-md-3">
@@ -299,8 +320,9 @@
     </div>
 
 <!-- formas de pagamento -->
-<div class="d-flex align-items-center gap-3 mt-4 flex-wrap">
-  <div class="d-flex gap-4 flex-wrap align-items-center">
+<div class="mt-3">
+  <span class="foot-badge">FORMAS DE PAGAMENTO</span>
+  <div class="pay-logos pay-mini d-flex align-items-center gap-3 mt-2 flex-wrap">
     <img src="images/master.png" alt="Mastercard" class="pay-logo">
     <img src="images/visa.png" alt="Visa" class="pay-logo">
     <img src="images/picpay.png" alt="PicPay" class="pay-logo">
@@ -308,6 +330,7 @@
     <img src="images/elo.png" alt="Elo" class="pay-logo">
     <img src="images/amex.png" alt="Amex" class="pay-logo">
   </div>
+</div>
 </div>
 
   <!-- faixa final -->
