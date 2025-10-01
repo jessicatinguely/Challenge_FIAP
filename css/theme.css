@@ -1,172 +1,183 @@
-:root{
-  --page:#f5f5f5;
-  --chip:#d44f36;
-  --brown:#6b4236;
-  --tile:#e8d9cd;
-  --tile-weak:#f0e6dc;
-  --thumb-h:200px;
-  --foot-minh: 320px;
-}
+/* =========================
+   THEME.CSS — versão limpa
+   ========================= */
 
-html,body{height:100%}
-body{background:var(--page);color:#1b1b1b}
-
-.fw-black{font-weight:900}
-.text-brown{color:var(--brown)!important}
-
-.header{background:var(--page);position:sticky;top:0;z-index:1030;border-bottom:1px solid rgba(0,0,0,.06)}
-main{background:transparent;padding:0}
-
-.search-bar{
-  height:52px;border-radius:28px;background:var(--chip);color:#fff;
-  box-shadow:0 4px 12px rgba(212,79,54,.25);
-}
-.search-input{color:#fff!important;font-weight:600}
-.search-input::placeholder{color:#ffe9e3;opacity:1}
-.search-btn{color:#fff!important;font-size:1.25rem}
-
-.nav-chips{gap:.6rem}
-.nav-chip{
-  display:inline-flex;align-items:center;gap:.5rem;
-  padding:.55rem 1rem;border-radius:12px;
-  background:var(--chip);color:#fff;text-decoration:none;font-weight:700;
-  border:1px solid var(--chip);
-}
-.nav-chip.active{ background:#bb3e29; border-color:#bb3e29; }
-
-.btn-primary{
-  background:var(--chip)!important; border-color:var(--chip)!important;font-weight:700;
-  box-shadow:0 8px 20px rgba(212,79,54,.25);
-}
-.btn-primary:hover{ filter: brightness(0.85); box-shadow: 0 18px 40px rgba(212,79,54,.4); }
-.btn-light{background:#fff;border-color:#fff;font-weight:700}
-
-.banner{margin-top:.75rem}
-.banner img{width:100%;max-height:360px;object-fit:cover;object-position:center;border-radius:18px}
-
-.selos{margin-top:1.25rem}
-.pill{
-  width:120px;height:120px;border-radius:60px;display:grid;place-items:center;
-  background:var(--tile);box-shadow:inset 0 0 0 10px var(--tile-weak), 0 6px 18px rgba(0,0,0,.06);
-  margin-inline:auto;
-}
-.pill img{width:60px;height:60px;object-fit:contain}
-
-.section-bar{
-  width:100%;font-weight:800;padding:.7rem 1rem;margin:1.25rem 0 .75rem;border-radius:.8rem;
-  background:var(--chip);color:#fff
-}
-.section-bar.beige{background:var(--tile-weak);color:var(--brown)}
-
-.card-tray{
-  background:var(--tile);border:0;border-radius:24px;padding:.75rem;
-  text-align:center;transition:transform .2s ease, box-shadow .2s ease;
-  box-shadow:0 1px 0 rgba(0,0,0,.02), 0 12px 22px rgba(0,0,0,.06);
-}
-.card-tray:hover{transform:translateY(-2px);box-shadow:0 16px 28px rgba(0,0,0,.08)}
-.tray-thumb{
-  width:100%;height:var(--thumb-h);object-fit:cover;object-position:center;
-  background:#fff;border-radius:14px;margin-bottom:.6rem
-}
-.card-body{padding:.5rem .5rem 1rem}
-
-footer{background:transparent;border-top:1px solid rgba(0,0,0,.06);padding:1.25rem 0;text-align:center}
-
-@media (max-width:992px){
-  .tray-thumb{height:180px}
-  .pill{width:96px;height:96px;border-radius:48px}
-  .pill img{width:48px;height:48px}
-}
-/* ===== Rodapé ===== */
-.swift-footer{background:#fff;padding-bottom:0}
-.foot-bar{background:var(--chip);color:#fff;padding:.6rem 0;margin-top:1.5rem}
-.foot-bar .bi{font-size:1.1rem}
-.foot-bar-text{font-size:.95rem}
-.pay-logo{
-  height:40px;   /* altura uniforme */
-  object-fit:contain;
-}
-/* ===== ESQUERDA: Monte seu cardápio + Cozinhe com AR (tamanho padronizado) ===== */
-
-/* Contêiner da coluna esquerda: empilha, alinha à esquerda e controla o gap */
-.left-stack{
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: flex-start;     /* impede centralizar os cards */
-}
-
-/* Cards compactos (apenas os 2 da esquerda) */
-.left-stack .card-tray.is-compact{
-  width: 100%;
-  max-width: 260px;            /* ajuste fino até igualar visualmente ao kit (220–270px) */
-  border-radius: 20px;
-  padding: .6rem;
-  margin: 0;                   /* garante que não centralize */
-}
-
-/* Imagem com altura menor para igualar a “altura” dos cards do kit */
-.left-stack .card-tray.is-compact .tray-thumb{
-  height: 180px;               /* use 200px se quiser exatamente igual ao kit */
-  object-fit: contain;         /* não corta a arte */
-}
-
-/* Texto e botão mais enxutos para bater a altura */
-.left-stack .card-tray.is-compact .card-body{ padding: .45rem .6rem .9rem; }
-.left-stack .card-tray.is-compact h6{
-  font-size: .85rem;
-  line-height: 1.15;
-  min-height: 2.3em;           /* ~2 linhas */
-}
-.left-stack .card-tray.is-compact .btn{
-  padding: .6rem 1rem;         /* botão unificado com os do kit */
-}
-
-/* ===== Footer (único, limpo) ===== */
-.swift-footer{ background:#fff; padding-bottom:0; }
-
-.swift-footer .row.g-4{ align-items:stretch; }
-.swift-footer .row.g-4 > [class*="col-"]{
-  display:flex; flex-direction:column; gap:12px;
-}
-
-.swift-footer .foot-card{
-  display:flex; flex-direction:column; height:100%;
-  background:var(--chip); color:#fff; border-radius:16px; padding:18px;
-  box-shadow:0 2px 0 rgba(0,0,0,.08);
-  min-height:var(--foot-minh);
-}
-
-.swift-footer .foot-card > .foot-pill{
-  display:inline-flex; align-items:center; gap:.75rem;
-  background:var(--tile-weak); color:var(--brown);
-  border-radius:999px; padding:.5rem 1rem;
-  margin:0 auto .9rem; /* centraliza */
-}
-.swift-footer .foot-card > .foot-pill i{
-  background:#fff; width:28px; height:28px; border-radius:50%;
-  display:grid; place-items:center; color:var(--chip); font-size:16px;
-}
-
-.swift-footer .foot-text{ line-height:1.3; text-align:left; }
-.swift-footer .foot-strong{ font-weight:800; font-size:1.1rem; }
-.swift-footer .foot-list{
-  list-style:none; margin:0; padding:0; display:flex; flex-direction:column;
-  gap:.35rem; text-align:left;
-}
-
-/* pagamento embaixo do 1º card, alinhado à esquerda */
-.swift-footer .pay-area{ text-align:left; }
-.swift-footer .pay-area .foot-badge{
-  display:inline-block; background:var(--tile-weak); color:var(--brown);
-  font-weight:800; border-radius:999px; padding:.5rem 1rem; margin-left:0;
-}
-.swift-footer .pay-area .pay-logos{
-  display:flex; align-items:center; gap:12px; flex-wrap:wrap; justify-content:flex-start;
-}
-
-/* logos de pagamento – uma vez só */
-.pay-logo{ height:40px; object-fit:contain; }
-
-/* faixa final */
-.swift-footer .foot-bar{ background:var(--chip); color:#fff; padding:.6rem 0; margin-top:1.5rem; }
+   :root{
+    --page:#f5f5f5;
+    --chip:#d44f36;
+    --brown:#6b4236;
+    --tile:#e8d9cd;
+    --tile-weak:#f0e6dc;
+    --thumb-h:200px;
+    --foot-minh:320px;
+  
+    /* Cardápios (tamanho do ícone do dia) */
+    --day-size:128px; /* ajuste fino: 118/122/132… */
+  }
+  
+  html,body{height:100%}
+  body{background:var(--page);color:#1b1b1b}
+  
+  .fw-black{font-weight:900}
+  .text-brown{color:var(--brown)!important}
+  
+  .header{background:var(--page);position:sticky;top:0;z-index:1030;border-bottom:1px solid rgba(0,0,0,.06)}
+  main{background:transparent;padding:0}
+  
+  /* ===== Busca ===== */
+  .search-bar{
+    height:52px;border-radius:28px;background:var(--chip);color:#fff;
+    box-shadow:0 4px 12px rgba(212,79,54,.25);
+  }
+  .search-input{color:#fff!important;font-weight:600}
+  .search-input::placeholder{color:#ffe9e3;opacity:1}
+  .search-btn{color:#fff!important;font-size:1.25rem}
+  
+  /* ===== Chips de navegação ===== */
+  .nav-chips{gap:.6rem}
+  .nav-chip{
+    display:inline-flex;align-items:center;gap:.5rem;
+    padding:.55rem 1rem;border-radius:12px;
+    background:var(--chip);color:#fff;text-decoration:none;font-weight:700;
+    border:1px solid var(--chip);
+  }
+  .nav-chip.active{background:#bb3e29;border-color:#bb3e29}
+  
+  /* ===== Botões ===== */
+  .btn-primary{
+    background:var(--chip)!important;border-color:var(--chip)!important;font-weight:700;
+    box-shadow:0 8px 20px rgba(212,79,54,.25);
+  }
+  .btn-primary:hover{filter:brightness(.85);box-shadow:0 18px 40px rgba(212,79,54,.40)}
+  .btn-light{background:#fff;border-color:#fff;font-weight:700}
+  
+  /* Botão “chip” (base global) */
+  .btn-chip{
+    background:var(--chip);color:#fff;border:0;border-radius:999px;
+    padding:.55rem 1.1rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center;
+    text-decoration:none;box-shadow:0 8px 20px rgba(212,79,54,.25);
+  }
+  .btn-chip:hover{filter:brightness(.95);color:#fff}
+  
+  /* ===== Banner ===== */
+  .banner{margin-top:.75rem}
+  .banner img{width:100%;max-height:360px;object-fit:cover;object-position:center;border-radius:18px}
+  
+  /* ===== Selos ===== */
+  .selos{margin-top:1.25rem}
+  .pill{
+    width:120px;height:120px;border-radius:60px;display:grid;place-items:center;
+    background:var(--tile);box-shadow:inset 0 0 0 10px var(--tile-weak), 0 6px 18px rgba(0,0,0,.06);
+    margin-inline:auto;
+  }
+  .pill img{width:60px;height:60px;object-fit:contain}
+  
+  /* ===== Barras de seção ===== */
+  .section-bar{
+    width:100%;font-weight:800;padding:.7rem 1rem;margin:1.25rem 0 .75rem;border-radius:.8rem;
+    background:var(--chip);color:#fff;
+  }
+  .section-bar.beige{background:var(--tile-weak);color:var(--brown)}
+  
+  /* ===== Cards comuns ===== */
+  .card-tray{
+    background:var(--tile);border:0;border-radius:24px;padding:.75rem;
+    text-align:center;transition:transform .2s ease, box-shadow .2s ease;
+    box-shadow:0 1px 0 rgba(0,0,0,.02), 0 12px 22px rgba(0,0,0,.06);
+  }
+  .card-tray:hover{transform:translateY(-2px);box-shadow:0 16px 28px rgba(0,0,0,.08)}
+  .tray-thumb{
+    width:100%;height:var(--thumb-h);object-fit:cover;object-position:center;
+    background:#fff;border-radius:14px;margin-bottom:.6rem;
+  }
+  .card-body{padding:.5rem .5rem 1rem}
+  
+  /* ===== Rodapé ===== */
+  footer{background:transparent;border-top:1px solid rgba(0,0,0,.06);padding:1.25rem 0;text-align:center}
+  
+  .swift-footer{background:#fff;padding-bottom:0}
+  .swift-footer .row.g-4{align-items:stretch}
+  .swift-footer .row.g-4 > [class*="col-"]{display:flex;flex-direction:column;gap:12px}
+  
+  .swift-footer .foot-card{
+    display:flex;flex-direction:column;height:100%;
+    background:var(--chip);color:#fff;border-radius:16px;padding:18px;
+    box-shadow:0 2px 0 rgba(0,0,0,.08);min-height:var(--foot-minh);
+  }
+  .swift-footer .foot-card > .foot-pill{
+    display:inline-flex;align-items:center;gap:.75rem;
+    background:var(--tile-weak);color:var(--brown);
+    border-radius:999px;padding:.5rem 1rem;margin:0 auto .9rem;
+  }
+  .swift-footer .foot-card > .foot-pill i{
+    background:#fff;width:28px;height:28px;border-radius:50%;
+    display:grid;place-items:center;color:var(--chip);font-size:16px;
+  }
+  .swift-footer .foot-text{line-height:1.3;text-align:left}
+  .swift-footer .foot-strong{font-weight:800;font-size:1.1rem}
+  .swift-footer .foot-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.35rem;text-align:left}
+  .swift-footer .pay-area{text-align:left}
+  .swift-footer .pay-area .foot-badge{
+    display:inline-block;background:var(--tile-weak);color:var(--brown);
+    font-weight:800;border-radius:999px;padding:.5rem 1rem;margin-left:0;
+  }
+  .swift-footer .pay-area .pay-logos{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:flex-start}
+  .pay-logo{height:40px;object-fit:contain}
+  .swift-footer .foot-bar{background:var(--chip);color:#fff;padding:.6rem 0;margin-top:1.5rem}
+  
+  /* ===== Responsivo base ===== */
+  @media (max-width:992px){
+    .tray-thumb{height:180px}
+    .pill{width:96px;height:96px;border-radius:48px}
+    .pill img{width:48px;height:48px}
+  }
+  
+  /* =========================================================
+     PÁGINA “MONTE SEU CARDÁPIO” (ajustes específicos)
+     ========================================================= */
+  
+  /* Lateral esquerda (stack) */
+  .left-stack{display:flex;flex-direction:column;gap:1rem;align-items:flex-start}
+  
+  /* Ícone do dia */
+  .day-thumb{
+    width:var(--day-size);height:var(--day-size);flex:0 0 var(--day-size);
+    object-fit:contain;border-radius:16px;
+    box-shadow:inset 0 0 0 8px var(--tile-weak), 0 8px 18px rgba(0,0,0,.06);
+  }
+  /* neutraliza .img-fluid etc */
+  .panel-soft img.day-thumb{width:var(--day-size)!important;height:var(--day-size)!important;max-width:none}
+  @media (max-width:992px){.day-thumb{width:96px;height:96px}}
+  
+  /* Cards dos dias (aparência + layout interno) */
+  .panel-soft{
+    background:var(--tile);border-radius:18px;padding:1.15rem 1.25rem;box-shadow:0 6px 18px rgba(0,0,0,.06);
+    display:flex;flex-direction:column; /* ancorar rodapé */
+  }
+  .panel-soft .head{white-space:nowrap;font-size:1.05rem}
+  .panel-soft .d-flex.gap-3{gap:1.25rem !important}
+  
+  /* Grade: todos os cards com mesma altura por linha */
+  section .row.row-cols-1.row-cols-md-2.g-4 > .col{display:flex}
+  section .row.row-cols-1.row-cols-md-2.g-4 > .col > .panel-soft{flex:1}
+  
+  /* Rodapé do card sempre no fundo */
+  .panel-soft > .d-flex:last-of-type{margin-top:auto;align-items:center}
+  .panel-soft > .d-flex:last-of-type .btn{margin-bottom:0 !important}
+  
+  /* Lateral de ações */
+  .sidebar-action .btn{display:block;width:100%}
+  .sidebar-action .btn + .btn{margin-top:1rem}
+  
+  /* Título “Ações” com respiro */
+  aside .badge.bg-deep{margin-bottom:.75rem}
+  
+  /* Desktop: largura das colunas + alinhamento vertical da lateral */
+  @media (min-width:992px){
+    main .row.g-4 > aside.col-lg-4{flex:0 0 27%;max-width:27%}
+    main .row.g-4 > section.col-lg-8{flex:0 0 73%;max-width:73%}
+  
+    /* sobe um pouco a coluna de ações para alinhar ao título da direita */
+    aside .sidebar-action{margin-top:-1.45rem !important} /* ajuste fino */
+  }
+  
