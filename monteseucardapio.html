@@ -38,14 +38,22 @@
       </div>
     </div>
 
-    <nav class="nav-chips d-flex align-items-center gap-2 mt-3">
+    <nav class="d-flex align-items-center gap-2 mt-3">
       <a class="nav-chip" href="index.html">Página Inicial</a>
-      <a class="nav-chip" href="#">Categorias</a>
+      <div class="dropdown nav-cats">
+        <a class="nav-chip dropdown-toggle" href="#" id="catsMenu" data-bs-toggle="dropdown">Categorias</a>
+        <ul class="dropdown-menu rounded-16 shadow border-0 p-2" aria-labelledby="catsMenu">
+          <li><a class="dropdown-item fw-bold" href="bovinos.html">Bovina</a></li>
+          <li><a class="dropdown-item" href="#">Suína</a></li>
+          <li><a class="dropdown-item" href="#">Aves</a></li>
+          <li><a class="dropdown-item" href="#">Outros produtos</a></li>
+          <li><a class="dropdown-item" href="#">Acessórios</a></li>
+        </ul>
+      </div>
       <a class="nav-chip" href="#">Promoções</a>
       <a class="nav-chip" href="#">Lojas Físicas</a>
       <a class="nav-chip" href="#">Entre em Contato</a>
       <a class="nav-chip" href="#">Sobre Nós</a>
-      <div class="ms-auto small d-none d-lg-block">🛒 <a href="carrinho.html" class="link-dark"><span data-cart-count>0</span></a></div>
     </nav>
   </div>
 </header>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-bs-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Swift — Bovinos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/theme.css">
+  <style>
+    .chip { background:#d94a2f; color:#fff; border-radius:12px; padding:.5rem .9rem; font-weight:600; }
+    .chip-outline { background:#fff; color:#d94a2f; border:2px solid #d94a2f; border-radius:12px; padding:.5rem .9rem; font-weight:600; text-decoration:none; }
+    .nav-chip{ background:#d94a2f; color:#fff; border-radius:12px; padding:.45rem .8rem; text-decoration:none; font-weight:600; }
+    .section-bar{ background:#d94a2f; color:#fff; border-radius:14px; padding:.5rem 1rem; font-weight:800; display:inline-block; }
+    .card-tray{ background:#f6e8db; border:0; border-radius:18px; }
+    .tray-thumb{ object-fit:cover; border-top-left-radius:18px; border-top-right-radius:18px; }
+    .text-brown{ color:#7b2e1e; }
+    .fw-black{ font-weight:800; }
+    .pill-mini{ width:66px; height:66px; border-radius:50%; background:#f6e8db; display:grid; place-items:center; overflow:hidden; }
+    .pill-mini img{ max-width:60px; max-height:60px; }
+    
+    @media (min-width: 992px){
+      .nav-cats.dropdown:hover .dropdown-menu{ display:block; margin-top:.5rem; }
+    }
+    .dropdown-menu.rounded-16{ border-radius:16px; }
+  </style>
+</head>
+<body class="bg-cream">
+
+<header class="header bg-cream sticky-top">
+  <div class="container py-3">
+    <div class="row g-3 align-items-center">
+      <div class="col-12 col-lg-3 d-flex align-items-center gap-2">
+        <a href="index.html"><img src="images/logo_swift.png" class="img-fluid" style="max-height:80px" alt="Swift"></a>
+      </div>
+      <div class="col-12 col-lg-6">
+        <form class="search-bar d-flex align-items-center px-3" role="search" onsubmit="event.preventDefault()">
+          <input class="search-input form-control border-0 bg-transparent" type="search" placeholder="O que você quer cozinhar hoje?">
+          <button class="search-btn btn btn-link p-0 ms-2" type="submit" aria-label="Buscar"><i class="bi bi-search"></i></button>
+        </form>
+      </div>
+      <div class="col-12 col-lg-3 text-lg-end d-grid d-lg-block gap-2">
+        <span class="chip me-2" id="welcomeChip">Bem-vindo</span>
+        <a href="cart.html" class="chip-outline d-inline-flex align-items-center gap-2">
+          <i class="bi bi-cart3"></i> Carrinho <span class="badge bg-danger" data-cart-count>0</span>
+        </a>
+      </div>
+    </div>
+
+    
+    <nav class="d-flex align-items-center gap-2 mt-3">
+      <a class="nav-chip" href="index.html">Página Inicial</a>
+      <div class="dropdown nav-cats">
+        <a class="nav-chip dropdown-toggle" href="#" id="catsMenu" data-bs-toggle="dropdown">Categorias</a>
+        <ul class="dropdown-menu rounded-16 shadow border-0 p-2" aria-labelledby="catsMenu">
+          <li><a class="dropdown-item fw-bold" href="bovinos.html">Bovina</a></li>
+          <li><a class="dropdown-item" href="#">Suína</a></li>
+          <li><a class="dropdown-item" href="#">Aves</a></li>
+          <li><a class="dropdown-item" href="#">Outros produtos</a></li>
+          <li><a class="dropdown-item" href="#">Acessórios</a></li>
+        </ul>
+      </div>
+      <a class="nav-chip" href="#">Promoções</a>
+      <a class="nav-chip" href="#">Lojas Físicas</a>
+      <a class="nav-chip" href="#">Entre em Contato</a>
+      <a class="nav-chip" href="#">Sobre Nós</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container my-4">
+  
+  <section class="row g-4 align-items-center">
+    <div class="col-lg-7">
+      <h2 class="fw-black text-brown mb-2">BOVINOS</h2>
+      <p class="text-muted">Carnes ultracongeladas e selecionadas para você levar pra casa somente o melhor da Swift em peças, cubos, filés e muito mais. Tudo para as suas refeições diárias se tornarem uma experiência de sabor sem igual.</p>
+      <div class="mt-3">
+        <span class="section-bar">Categorias em destaque</span>
+        <div class="d-flex gap-3 mt-3 flex-wrap">
+          <div class="text-center">
+            <div class="pill-mini"><img src="images/corta_contra.png" alt="Contra"></div>
+            <div class="small mt-1 text-brown fw-semibold">CONTRA</div>
+          </div>
+          <div class="text-center">
+            <div class="pill-mini"><img src="images/picanha.png" alt="Picanha"></div>
+            <div class="small mt-1 text-brown fw-semibold">PICANHA</div>
+          </div>
+          <div class="text-center">
+            <div class="pill-mini"><img src="images/alcatra.png" alt="Alcatra"></div>
+            <div class="small mt-1 text-brown fw-semibold">ALCATRA</div>
+          </div>
+          <div class="text-center">
+            <div class="pill-mini"><img src="images/costela.png" alt="Costela"></div>
+            <div class="small mt-1 text-brown fw-semibold">COSTELA</div>
+          </div>
+          <div class="text-center">
+            <div class="pill-mini"><img src="images/mignon.png" alt="Mignon"></div>
+            <div class="small mt-1 text-brown fw-semibold">MIGNON</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-5">
+      <img src="images/bovinos_hero.png" class="img-fluid rounded-4" alt="Bovinos Swift">
+    </div>
+  </section>
+
+  
+  <section class="mt-4">
+    <div class="row row-cols-2 row-cols-md-4 g-3">
+      
+      <div class="col">
+        <div class="card card-tray h-100">
+          <img class="card-img-top tray-thumb" src="images/moida_patinho.png" alt="Carne moída de patinho 1kg">
+          <div class="card-body d-flex flex-column">
+            <h6 class="text-brown fw-bold small">CARNE MOÍDA DE PATINHO 1KG</h6>
+            <div class="text-muted small mb-1">EMBALAGEM DE 1KG</div>
+            <div class="fw-black mb-2">R$ 49,90</div>
+            <button class="btn btn-primary mt-auto" data-add="Carne moída patinho 1kg" data-price="49.9">ADICIONAR</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card card-tray h-100">
+          <img class="card-img-top tray-thumb" src="images/almond_bovina.png" alt="Almôndegas 500g">
+          <div class="card-body d-flex flex-column">
+            <h6 class="text-brown fw-bold small">ALMÔNDEGAS BOVINAS 500G</h6>
+            <div class="text-muted small mb-1">EMBALAGEM DE 500G</div>
+            <div class="fw-black mb-2">R$ 18,90</div>
+            <button class="btn btn-primary mt-auto" data-add="Almôndegas bovinas 500g" data-price="18.9">ADICIONAR</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card card-tray h-100">
+          <img class="card-img-top tray-thumb" src="images/bife_contrafile.png" alt="Bife de contrafilé">
+          <div class="card-body d-flex flex-column">
+            <h6 class="text-brown fw-bold small">BIFE DE CONTRAFILÉ</h6>
+            <div class="text-muted small mb-1">PREÇO AO KG</div>
+            <div class="fw-black mb-2">R$ 49,90</div>
+            <button class="btn btn-primary mt-auto" data-add="Bife de contrafilé" data-price="49.9">ADICIONAR</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card card-tray h-100">
+          <img class="card-img-top tray-thumb" src="images/contrafile_combo.png" alt="Contrafilé combo 1,1kg">
+          <div class="card-body d-flex flex-column">
+            <h6 class="text-brown fw-bold small">CONTRAFILÉ COMBO 1,1KG</h6>
+            <div class="text-muted small mb-1">EMBALAGEM</div>
+            <div class="fw-black mb-2">R$ 44,90</div>
+            <button class="btn btn-primary mt-auto" data-add="Contrafilé combo 1,1kg" data-price="44.9">ADICIONAR</button>
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+  </section>
+
+
+<footer class="swift-footer py-4">
+  <div class="container">
+    <!-- 4 cards -->
+    <div class="row g-4">
+      <div class="col-12 col-md-3">
+        <div class="foot-card">
+          <div class="foot-pill"><i class="bi bi-headset"></i><span>CANAIS DE VENDAS</span></div>
+          <div class="foot-text">
+            <div>COMPRE PELO TELEVENDAS</div>
+            <div class="foot-strong">(11) 4020-8588</div>
+            <div class="mt-2">COMPRE PELO WHATSAPP</div>
+            <div class="foot-strong">(11) 4020-8588</div>
+            <div class="foot-small mt-2">SEGUNDA A SEXTA - 7H ÀS 19H<br>SÁBADOS - 7H ÀS 18H<br>FERIADOS - 9H ÀS 15H</div>
+          </div>
+        </div>      
+      </div>
+
+      <div class="col-12 col-md-3">
+        <div class="foot-card">
+          <div class="foot-pill"><i class="bi bi-chat-dots"></i><span>SWIFT RESOLVE</span></div>
+          <div class="foot-text">
+            <div>RESOLVA PELO CHAT</div>
+            <div class="foot-link">CLIQUE AQUI</div>
+            <div class="mt-2">RESOLVA PELO TELEFONE</div>
+            <div class="foot-strong">0800 400 2892</div>
+            <div class="foot-small mt-2">SEGUNDA A SEXTA - 9H ÀS 18H<br>SÁBADOS - 9H ÀS 15H<br>FERIADOS - 9H ÀS 15H</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-3">
+        <div class="foot-card">
+          <div class="foot-pill"><i class="bi bi-hand-index-thumb"></i><span>PARA VOCÊ!!!</span></div>
+          <ul class="foot-list">
+            <li>RECEITAS SWIFT</li><li>CHURRASCO SWIFT</li><li>COZINHE COM AR</li><li>TRABALHE CONOSCO</li><li>POLÍTICA DE PRIVACIDADE</li><li>DÚVIDAS FREQUENTES</li><li>FAQ</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-3">
+        <div class="foot-card">
+          <div class="foot-pill"><i class="bi bi-info-circle"></i><span>SOBRE NÓS</span></div>
+          <ul class="foot-list">
+            <li>A NOSSA HISTÓRIA</li><li>ENCONTRE NOSSAS LOJAS</li><li>SUSTENTABILIDADE</li><li>APP SWIFT</li><li>REGULAMENTOS</li><li>E-MAIL</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+<!-- formas de pagamento -->
+<section class="my-4 pay-area">
+  <span class="foot-badge">FORMAS DE PAGAMENTO</span>
+  <div class="pay-logos pay-mini d-flex align-items-center gap-3 mt-2 flex-wrap">
+    <img src="images/master.png"  alt="Mastercard" class="pay-logo">
+    <img src="images/visa.png"    alt="Visa"       class="pay-logo">
+    <img src="images/picpay.png"  alt="PicPay"     class="pay-logo">
+    <img src="images/pix.png"     alt="Pix"        class="pay-logo">
+    <img src="images/elo.png"     alt="Elo"        class="pay-logo">
+    <img src="images/amex.png"    alt="Amex"       class="pay-logo">
+  </div>
+</section>
+
+  <!-- faixa final -->
+  <div class="foot-bar mt-4">
+    <div class="container d-flex flex-wrap gap-3 justify-content-between align-items-center">
+      <div class="foot-bar-text"><strong>Acesse nossas redes</strong></div>
+      <div class="d-flex align-items-center gap-4">
+        <span class="d-flex align-items-center gap-2"><i class="bi bi-instagram"></i>@lojaswift</span>
+        <span class="d-flex align-items-center gap-2"><i class="bi bi-facebook"></i>/lojaswift</span>
+        <span class="d-flex align-items-center gap-2"><i class="bi bi-youtube"></i>lojaswiftofficial</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  
+  function nameFromEmail(email){ if(!email) return ''; const left=email.split('@')[0]; const p=left.split(/[._-]+/).filter(Boolean); return p.length? (p[0][0].toUpperCase()+p[0].slice(1)) : 'Cliente';}
+  function getUser(){ try{return JSON.parse(localStorage.getItem('swift_user')||'null');}catch(e){return null;} }
+  function getCart(){ try{return JSON.parse(localStorage.getItem('swift_cart')||'[]');}catch(e){return [];} }
+  function setCart(c){ localStorage.setItem('swift_cart', JSON.stringify(c)); renderCartSummary(); }
+  function addToCart(item){ const cart=getCart(); const i=cart.findIndex(p=>p.name===item.name); if(i>=0){cart[i].qty+=item.qty;} else {cart.push(item);} setCart(cart); }
+  function currencyBRL(v){ return v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'}); }
+  function renderCartSummary(){ const cart=getCart(); const count=cart.reduce((s,i)=>s+i.qty,0); const total=cart.reduce((s,i)=>s+i.qty*i.price,0); document.querySelectorAll('[data-cart-count]').forEach(n=>n.textContent=count); const t=document.querySelector('[data-cart-total]'); if(t) t.textContent=currencyBRL(total); }
+  (function init(){
+    const u=getUser(); const chip=document.getElementById('welcomeChip'); if(chip){ chip.textContent='Bem-vindo '+(u?.name||nameFromEmail(u?.email)||'Cliente'); }
+    renderCartSummary();
+  })();
+  document.addEventListener('click', e=>{
+    const btn=e.target.closest('button[data-add]'); if(!btn) return;
+    addToCart({ name: btn.getAttribute('data-add'), price: parseFloat(btn.getAttribute('data-price')||'0'), qty:1 });
+    btn.classList.add('btn-success'); btn.textContent='ADICIONADO ✓';
+    setTimeout(()=>{ btn.classList.remove('btn-success'); btn.textContent='ADICIONAR'; }, 900);
+  });
+</script>
+</body>
+</html>

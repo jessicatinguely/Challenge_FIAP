@@ -1,10 +1,13 @@
 /* =========================
-   THEME.CSS — versão limpa
+   THEME.CSS — versão completa (combinada para index e login, com carrinho corrigido)
    ========================= */
 
    :root{
     --page:#f5f5f5;
+    --swift-red:#d44f36;
+    --swift-red-700:#d44f36;
     --chip:#d44f36;
+    --chip-700:#bb3e29;
     --brown:#6b4236;
     --tile:#e8d9cd;
     --tile-weak:#f0e6dc;
@@ -12,7 +15,7 @@
     --foot-minh:320px;
   
     /* Cardápios (tamanho do ícone do dia) */
-    --day-size:128px; /* ajuste fino: 118/122/132… */
+    --day-size:128px;
   }
   
   html,body{height:100%}
@@ -24,7 +27,49 @@
   .header{background:var(--page);position:sticky;top:0;z-index:1030;border-bottom:1px solid rgba(0,0,0,.06)}
   main{background:transparent;padding:0}
   
-  /* ===== Busca ===== */
+  /* ===== Estilos para Carrinho de Compras (adicionado/restaurado para index) ===== */
+  /* Assumindo classes comuns; ajuste se o seu HTML usar nomes diferentes */
+  .cart-icon,
+  .shopping-cart,
+  .navbar .cart-link {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--brown);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem;
+    border-radius: 12px;
+    transition: background 0.2s ease;
+  }
+  .cart-icon:hover,
+  .shopping-cart:hover,
+  .navbar .cart-link:hover {
+    background: var(--tile-weak);
+    color: var(--chip);
+  }
+  .cart-badge {
+    background: var(--swift-red);
+    color: #fff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: grid;
+    place-items: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    position: relative;
+    top: -8px;
+    right: -8px;
+  }
+  .navbar .ms-auto.small,
+  .ms-auto.small.d-none.d-lg-block {
+    display: flex !important; /* Visível por padrão na index */
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  /* ===== Busca (estilos da index original) ===== */
   .search-bar{
     height:52px;border-radius:28px;background:var(--chip);color:#fff;
     box-shadow:0 4px 12px rgba(212,79,54,.25);
@@ -33,7 +78,7 @@
   .search-input::placeholder{color:#ffe9e3;opacity:1}
   .search-btn{color:#fff!important;font-size:1.25rem}
   
-  /* ===== Chips de navegação ===== */
+  /* ===== Chips de navegação (estilos da index original) ===== */
   .nav-chips{gap:.6rem}
   .nav-chip{
     display:inline-flex;align-items:center;gap:.5rem;
@@ -41,17 +86,22 @@
     background:var(--chip);color:#fff;text-decoration:none;font-weight:700;
     border:1px solid var(--chip);
   }
-  .nav-chip.active{background:#bb3e29;border-color:#bb3e29}
+  .nav-chip.active{background:var(--chip-700);border-color:var(--chip-700)}
   
-  /* ===== Botões ===== */
+  /* ===== Botões (base da index, com override para auth abaixo) ===== */
   .btn-primary{
-    background:var(--chip)!important;border-color:var(--chip)!important;font-weight:700;
-    box-shadow:0 8px 20px rgba(212,79,54,.25);
+    background:var(--swift-red)!important;
+    border-color:var(--swift-red)!important;
+    font-weight:700;
+    box-shadow:0 8px 20px rgba(227,6,19,.2);
   }
-  .btn-primary:hover{filter:brightness(.85);box-shadow:0 18px 40px rgba(212,79,54,.40)}
+  .btn-primary:hover{
+    background:var(--swift-red-700)!important;
+    border-color:var(--swift-red-700)!important;
+  }
   .btn-light{background:#fff;border-color:#fff;font-weight:700}
   
-  /* Botão “chip” (base global) */
+  /* Botão “chip” (base global, do segundo arquivo - útil para index) */
   .btn-chip{
     background:var(--chip);color:#fff;border:0;border-radius:999px;
     padding:.55rem 1.1rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center;
@@ -59,11 +109,11 @@
   }
   .btn-chip:hover{filter:brightness(.95);color:#fff}
   
-  /* ===== Banner ===== */
+  /* ===== Banner (estilos da index original) ===== */
   .banner{margin-top:.75rem}
   .banner img{width:100%;max-height:360px;object-fit:cover;object-position:center;border-radius:18px}
   
-  /* ===== Selos ===== */
+  /* ===== Selos (estilos da index original) ===== */
   .selos{margin-top:1.25rem}
   .pill{
     width:120px;height:120px;border-radius:60px;display:grid;place-items:center;
@@ -72,14 +122,15 @@
   }
   .pill img{width:60px;height:60px;object-fit:contain}
   
-  /* ===== Barras de seção ===== */
+  /* ===== Barras de seção (estilos da index original) ===== */
   .section-bar{
     width:100%;font-weight:800;padding:.7rem 1rem;margin:1.25rem 0 .75rem;border-radius:.8rem;
-    background:var(--chip);color:#fff;
+    background:var(--swift-red);
+    color:#fff;
   }
   .section-bar.beige{background:var(--tile-weak);color:var(--brown)}
   
-  /* ===== Cards comuns ===== */
+  /* ===== Cards comuns (estilos da index original) ===== */
   .card-tray{
     background:var(--tile);border:0;border-radius:24px;padding:.75rem;
     text-align:center;transition:transform .2s ease, box-shadow .2s ease;
@@ -92,9 +143,10 @@
   }
   .card-body{padding:.5rem .5rem 1rem}
   
-  /* ===== Rodapé ===== */
+  /* ===== Rodapé simples (base da index original) ===== */
   footer{background:transparent;border-top:1px solid rgba(0,0,0,.06);padding:1.25rem 0;text-align:center}
   
+  /* Rodapé avançado (swift-footer, adicionado de volta do segundo arquivo - para corrigir index) */
   .swift-footer{background:#fff;padding-bottom:0}
   .swift-footer .row.g-4{align-items:stretch}
   .swift-footer .row.g-4 > [class*="col-"]{display:flex;flex-direction:column;gap:12px}
@@ -125,59 +177,185 @@
   .pay-logo{height:40px;object-fit:contain}
   .swift-footer .foot-bar{background:var(--chip);color:#fff;padding:.6rem 0;margin-top:1.5rem}
   
-  /* ===== Responsivo base ===== */
-  @media (max-width:992px){
-    .tray-thumb{height:180px}
-    .pill{width:96px;height:96px;border-radius:48px}
-    .pill img{width:48px;height:48px}
-  }
-  
   /* =========================================================
-     PÁGINA “MONTE SEU CARDÁPIO” (ajustes específicos)
+     PÁGINA “MONTE SEU CARDÁPIO” (ajustes específicos, adicionado de volta do segundo arquivo - para index se aplicável)
      ========================================================= */
-  
-  /* Lateral esquerda (stack) */
   .left-stack{display:flex;flex-direction:column;gap:1rem;align-items:flex-start}
   
-  /* Ícone do dia */
   .day-thumb{
     width:var(--day-size);height:var(--day-size);flex:0 0 var(--day-size);
     object-fit:contain;border-radius:16px;
     box-shadow:inset 0 0 0 8px var(--tile-weak), 0 8px 18px rgba(0,0,0,.06);
   }
-  /* neutraliza .img-fluid etc */
   .panel-soft img.day-thumb{width:var(--day-size)!important;height:var(--day-size)!important;max-width:none}
   @media (max-width:992px){.day-thumb{width:96px;height:96px}}
   
-  /* Cards dos dias (aparência + layout interno) */
   .panel-soft{
     background:var(--tile);border-radius:18px;padding:1.15rem 1.25rem;box-shadow:0 6px 18px rgba(0,0,0,.06);
-    display:flex;flex-direction:column; /* ancorar rodapé */
+    display:flex;flex-direction:column;
   }
   .panel-soft .head{white-space:nowrap;font-size:1.05rem}
   .panel-soft .d-flex.gap-3{gap:1.25rem !important}
   
-  /* Grade: todos os cards com mesma altura por linha */
   section .row.row-cols-1.row-cols-md-2.g-4 > .col{display:flex}
   section .row.row-cols-1.row-cols-md-2.g-4 > .col > .panel-soft{flex:1}
   
-  /* Rodapé do card sempre no fundo */
   .panel-soft > .d-flex:last-of-type{margin-top:auto;align-items:center}
   .panel-soft > .d-flex:last-of-type .btn{margin-bottom:0 !important}
   
-  /* Lateral de ações */
   .sidebar-action .btn{display:block;width:100%}
   .sidebar-action .btn + .btn{margin-top:1rem}
   
-  /* Título “Ações” com respiro */
   aside .badge.bg-deep{margin-bottom:.75rem}
   
-  /* Desktop: largura das colunas + alinhamento vertical da lateral */
   @media (min-width:992px){
     main .row.g-4 > aside.col-lg-4{flex:0 0 27%;max-width:27%}
     main .row.g-4 > section.col-lg-8{flex:0 0 73%;max-width:73%}
-  
-    /* sobe um pouco a coluna de ações para alinhar ao título da direita */
-    aside .sidebar-action{margin-top:-1.45rem !important} /* ajuste fino */
+    aside .sidebar-action{margin-top:-1.45rem !important}
   }
   
+  /* =========================================================
+     Estilos de Autenticação e Cadastro (do arquivo original - login funcionando)
+     ========================================================= */
+  .auth-hero{
+    min-height:100vh;
+    background:url("../images/fundo1.png") center/cover no-repeat fixed;
+    display:grid;place-items:center;position:relative;
+  }
+  .auth-overlay{
+    position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.25));
+  }
+  .auth-card{
+    width:min(480px,92vw);
+    background:rgba(255,255,255,.82);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(0,0,0,.06);
+    border-radius:16px;padding:1.25rem;
+    box-shadow:0 12px 28px rgba(0,0,0,.12);
+  }
+  .auth-input{
+    height:48px;border-radius:24px;
+    background:#f7f1eb;border:1px solid #eadfd6;font-weight:600;
+  }
+  .auth-input:focus{
+    border-color:#d44f36;
+    box-shadow:0 0 0 .2rem rgba(212,79,54,.15);
+  }
+  /* Override específico para auth (mantém o que estava bom no login) */
+  .auth-hero .btn-primary,
+  body.cadastro .btn-primary{
+    background: rgba(227,6,19,0.5) !important;
+    border: none !important;
+    font-weight:700;
+    box-shadow: 0 4px 12px rgba(227,6,19,.25);
+  }
+  .auth-hero .btn-primary:hover,
+  body.cadastro .btn-primary:hover{
+    background: rgba(227,6,19,0.8) !important;
+  }
+  
+  /* Esconder elementos da navbar APENAS em auth/login/cadastro (corrigido para não afetar index) */
+  .auth-hero .navbar .ms-auto.small,
+  .auth-hero .ms-auto.small.d-none.d-lg-block,
+  body.cadastro .navbar .ms-auto.small,
+  body.cadastro .ms-auto.small.d-none.d-lg-block {
+    display: none !important;
+  }
+  
+  .auth-hero + header,
+  .auth-hero + footer,
+  header.header.bg-cream,
+  footer {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+  
+  body.cadastro{ margin:0; padding:0; min-height:100vh; }
+  body.cadastro .header{
+    position:absolute; top:0; left:0;
+    background:transparent !important; border:none !important; box-shadow:none !important;
+  }
+  body.cadastro footer{ display:none; }
+  
+  body.cadastro .cadastro-hero{
+    min-height:100vh;
+    background:url("../images/fundo2.png") center/cover no-repeat fixed;
+    display:grid; place-items:center; position:relative;
+  }
+  
+  body.cadastro .cadastro-overlay{
+    position:absolute; inset:0; z-index:1; pointer-events:none;
+    background:linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.25));
+  }
+  
+  body.cadastro .auth-card{
+    position:relative; z-index:2;
+    width:min(600px,92vw);
+    background:rgba(255,255,255,.85);
+    backdrop-filter:blur(12px);
+    border-radius:18px; padding:1.5rem;
+    box-shadow:0 12px 28px rgba(0,0,0,.15);
+  }
+  
+  body.cadastro .auth-input{
+    height:48px; border-radius:24px; background:#f7f1eb;
+    border:1px solid #eadfd6; font-weight:600;
+  }
+  body.cadastro .auth-input:focus{
+    border-color:#d44f36; box-shadow:0 0 0 .2rem rgba(212,79,54,.15);
+  }
+  
+  body.cadastro .nav-pills .nav-link{
+    border-radius:20px; font-weight:600;
+    color:var(--brown); background:var(--tile-weak);
+  }
+  body.cadastro .nav-pills .nav-link.active{
+    background:var(--swift-red) !important; color:#fff !important;
+  }
+  
+  .pay-logos img {
+    height: 28px;
+    width: auto;
+  }
+  
+  /* ===== Responsivo base (para index) ===== */
+  @media (max-width:992px){
+    .tray-thumb{height:180px}
+    .pill{width:96px;height:96px;border-radius:48px}
+    .pill img{width:48px;height:48px}
+  }
+  /* Pill "Bem-vindo, Nome" */
+.welcome-pill{
+  background:#db4f33;        /* laranja Swift */
+  color:#fff;
+  border-radius:20px;
+  padding:8px 14px;
+  font-weight:700;
+  line-height:1;
+  white-space:nowrap;
+}
+
+/* Botão de carrinho grande */
+.cart-cta{
+  background:#fff;
+  border:2px solid #db4f33;
+  color:#db4f33;
+  border-radius:16px;
+  padding:8px 12px;
+}
+.cart-cta:hover{
+  background:#ffe9e4;
+  color:#b93f28;
+  border-color:#b93f28;
+}
+
+/* Badge do contador dentro do botão */
+.cart-badge{
+  background:#c83b3b;
+  color:#fff;
+  border-radius:12px;
+  padding:2px 8px;
+  font-weight:700;
+}
